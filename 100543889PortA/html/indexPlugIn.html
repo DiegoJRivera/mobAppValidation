@@ -1,0 +1,155 @@
+<!--
+Portfolio Part A – Validation using jQuery & Plug-in
+Author: Diego Rivera
+07/03/2017
+-->
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile Web App</title>
+    
+<link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.4.5.min.css">
+<script src="../jQuery/jquery-1.11.2.min.js"></script>
+<script src="../jQuery/jquery.mobile-1.4.5.min.js"></script>
+<script src="../js/scriptPlugIn.js"></script>
+<script src="../jQueryValidator/jquery.validate.min.js"></script>
+<script src="../jQueryValidator/additional-methods.min.js"></script>
+
+<style type="text/css">
+
+    #errorBox {
+        background-color: #FCC;
+        padding: 3px 0 3px 0;
+        border: thick;
+        display: none; 
+    }
+
+</style>
+
+</head>
+ 
+<body> 
+<!--
+=================================================== Register jQuery(Plug in) Page ===================================================
+-->
+<div data-role="page" id="jQueryPlugIn">
+    <div data-role="header">
+    <a href="#" data-rel="back" data-direction="reverse" data-icon="carat-l">Back</a> <!--Back Button-->
+        <h1>Register Plug-in</h1>
+    </div>
+    <!--<div data-role="content">-->
+    <div data-role="main" class="ui-content">
+    
+    <div id="errorSummary"></div>
+    <div id="errorBox"><ul></ul></div>
+
+    <p><em>Register your interest and receive our weekly newsletters:</em></p>
+
+<form id="contactForm">
+    <div data-role="fieldcontain">
+	    <label for="txtName">Name:</label>
+		<input type="text" name="txtName" id="txtName" placeholder="*Please enter your Name: E.g. Diego Rivera"/>
+	</div>
+
+    <div data-role="fieldcontain">
+	    <label for="numAge">Age:</label>
+		<input type="number" name="numAge" id="numAge" placeholder="*Please enter your Age, only numbers: E.g. 30"/>
+    </div>
+
+    <div data-role="fieldcontain" id="radChooseSex">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>Sex:</legend>
+          <input type="radio" name="radSex" id="radMale" value="Male" />
+          <label for="radMale">Male</label>
+          <input type="radio" name="radSex" id="radFemale" value="Female" checked="checked"/>
+          <label for="radFemale">Female</label>
+        </fieldset>
+    </div>
+
+    <div data-role="fieldcontain">
+        <label for="txtEmail">e-Mail:</label>
+		<input type="text" name="txtEmail" id="txtEmail" placeholder="*Please enter your e-mail Address: E.g. youremail@example.com" />
+	</div>
+
+    <div data-role="fieldcontain">
+		<label for="txtConEmail">Confirm e-Mail:</label>
+		<input type="text" name="txtConEmail" id="txtConEmail" placeholder="*Please confirm your e-mail Address entered before"/>
+    </div>
+
+    <div data-role="fieldcontain" id="chkMyVarieties">
+        <fieldset data-role="controlgroup">
+            <legend>I'm interested in the following varieties:</legend>
+            <input type="checkbox" name="chkVarieties" id="chkComet" class="custom" value="Comet" />
+            <label for="chkComet">Comet</label>
+          
+            <input type="checkbox" name="chkVarieties" id="chkGoldfish" class="custom" value="Common Goldfish" />
+            <label for="chkGoldfish">Common Goldfish</label>
+          
+            <input type="checkbox" name="chkVarieties" id="chkBlackMoor" class="custom" value="Black Moor" />
+            <label for="chkBlackMoor">Black Moor</label>
+          
+            <input type="checkbox" name="chkVarieties" id="chkCelestialEye" class="custom" value="Celestial Eye" />
+            <label for="chkCelestialEye">Celestial Eye</label>
+
+            <input type="checkbox" name="chkVarieties" id="chkFantail" class="custom" value="Fantail" />
+            <label for="chkFantail">Fantail</label>
+
+            <input type="checkbox" name="chkVarieties" id="chkLionchu" class="custom" value="Lionchu" />
+            <label for="chkLionchu">Lionchu</label>
+
+            <input type="checkbox" name="chkVarieties" id="chkOther" class="custom" value="Other" />
+            <label for="chkOther">Other</label>
+        </fieldset>
+    </div>
+
+    <div data-role="fieldcontain" id="FishComments">
+        <label for="txtComments">Fish varieties:</label>
+        <textarea cols="40" rows="4" name="txtComments" id="txtComments" placeholder="*Please enter other fish varieties: at least 10 characters long."></textarea>
+    </div>
+
+    <div data-role="fieldcontain" id="selAllAboutus">
+        <label for="selAboutus" class="select">How did you hear about us?:</label>
+        <select name="selAboutus" id="selAboutus" data-native-menu="false">
+            <option value="Internet" selected="selected">Internet</option>
+            <option value="Radio">Radio</option>
+            <option value="T.V.">T.V.</option>
+            <option value="A Friend">A Friend</option>
+            <option value="Newspaper">Newspaper</option>
+        </select>
+    </div>
+
+    <div data-role="fieldcontain">
+        <label>&nbsp;</label>
+        <button data-inline="true" id="sendFormPlugIn">Register</button>
+        <button data-inline="true" id="clearFormPlugIn">Start Again</button>
+    </div>
+</form>
+
+    </div>
+    <div data-role="footer"> 
+        <h4>Diego Rivera</h4>    
+    </div>
+</div>
+
+<!--
+===================================== Dialog Box Registration Confirmation jQuery(Plug in) Page =====================================
+-->
+<div data-role="page" id="mySummaryPlugIn" data-dialog="true">   
+    <div data-role="header">
+          <h1>Summary Plug-in</h1>
+    </div>
+    <!--<div data-role="content">-->
+    <div data-role="main" class="ui-content">  
+        <p id="ans2"></p>  
+    </div>
+    <div data-role="fieldcontain" align="center">
+      <a href="#" data-role="button" data-inline="true" data-rel="back" data-direction="reverse" >Close</a>
+    </div>
+    <div data-role="footer">
+        <h4>Diego Rivera</h4>
+    </div>
+</div>
+
+</body>
+</html>
